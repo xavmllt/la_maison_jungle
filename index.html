@@ -6,17 +6,48 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">
+    </div>
+
+    <div id="roots">
+
+    </div>
 
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- <script type="text/babel">
+        function Header(){
+            return (<h1>La maison jungle</h1>)
+        }
+        ReactDOM.render(<Header />, document.getElementById("root"))
+    </script> -->
+
     <script type="text/babel">
         function Header(){
-            return <h1>La maison jungle</h1>
-        };
+            return (<div>
+                <h1>La maison jungle</h1>
+                </div>)
+        }
+        function Description(){
+                return (<p>Ici achetez toutes les plantes</p>)
+            }
+        // ReactDOM.render(<div><Header /><Description /></div>, document.getElementById("root"))
+        ReactDOM.render(<React.Fragment><Header /><Description /></React.Fragment>, document.getElementById("root"))
 
-        ReactDOM.render(<Header />, document.getElementById("root"));
-    </script>    
+        function Banner(){
+            return (<div>
+                <Header />
+                <Description />
+            </div>)
+        }
+
+        function Descriptions(){
+            const text = "Ici acheté tout"
+            const emoji = "🥵😤"
+            return <p>{text.slice(0, 20) + emoji}</p>
+        }
+        ReactDOM.render(<Descriptions />, document.getElementById("roots"));
+    </script>
 </body>
 </html>
