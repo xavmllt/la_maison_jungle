@@ -26,11 +26,6 @@ function ShoppingList({ cart, updateCart }) {
 
 	return (
 		<div className='lmj-shopping-list'>
-			<ul>
-				{categories.map((cat) => (
-					<li key={cat}>{cat}</li>
-				))}
-			</ul>
 			<ul className='lmj-plant-list'>
 				{plantList.map(({ id, cover, name, water, light, price }) => (
 					<div key={id}>
